@@ -1,0 +1,38 @@
+:host ::ng-deep .layout-menu-button:hover {
+    background-color: #9f4a05 !important;
+}
+
+.encabezNomb {
+    -moz-transition: left 0.3s;
+    -o-transition: left 0.3s;
+    -webkit-transition: left 0.3s;
+    transition: left 0.3s;
+    position: fixed;
+    right: 0;
+    left: 50px;
+    border: 0px solid #949494;
+    height: 38px;
+    top: 60px;
+    background-image: linear-gradient(to right, #787777, #3f4249);
+    box-sizing: border-box;
+    color: #FFF1E6;
+    z-index: 101;
+    text-align: center !important;
+
+}
+
+.padencabezNomb {
+    padding-top: 8px;
+    padding-left:20px;
+}
+
+.displayblock{
+  display: inline-block;
+}
+
+
+.widtitle{
+  width: calc(100% - 90px);
+  margin-top: 14px;
+  color: #ffffff;
+}

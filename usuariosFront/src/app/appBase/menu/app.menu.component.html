@@ -1,0 +1,13 @@
+<div class="layout-menu-content menu-scroll-content">
+  <div class="layout-menu-title">Menu</div>
+  <ul app-submenu [item]="model" [tipo]=1 class="layout-menu layout-main-menu layout-menuitems clearfix dispblock"
+      [@subirAnimationMenu]="app.sidebarActive   ? true : false"
+      parentactive="true" root="true" visible="true">
+  </ul>
+
+
+  <ul app-submenu [item]="model2" [tipo]=2 class="layout-menu layout-main-menu layout-tipmenu clearfix dispblock"
+      [@subirAnimationMenu]="app.sidebarActive   ? true : false"
+      parentactive="true" root="true" visible="true">
+  </ul>
+</div>

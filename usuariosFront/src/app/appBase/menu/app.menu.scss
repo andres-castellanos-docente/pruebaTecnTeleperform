@@ -1,0 +1,24 @@
+
+
+
+@media screen and (min-height: 10px) {
+    :host ::ng-deep .ui-scrollMenu{
+        width:100%!important;
+        height: calc(100vh - 120px)!important;
+    }
+}
+
+@media screen and (min-height: 900px) {
+    :host ::ng-deep .ui-scrollMenu{
+        width:100%!important;
+        height: calc(100vh - 60px)!important;
+    }
+}
+
+.hei60{
+    min-height: 60px;
+}
+
+:host ::ng-deep .ui-menuitem-text{
+  width: calc(100% - 54px)!important;
+}

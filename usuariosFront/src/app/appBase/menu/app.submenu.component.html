@@ -1,0 +1,19 @@
+<ng-template ngFor let-child let-i="index" [ngForOf]="(root ? item : item.items)">
+    <li [ngClass]="{'active-menuitem': (isActive(i) && child.items) || isActiveRoute(child.routerLink)}" >
+        <a [href]="child.url||'#'" (click)="itemClick($event,child,i)" *ngIf="!child.routerLink" [attr.target]="child.target">
+            <i class="layout-menuitem-icon fas" [ngClass]="child.icon" *ngIf="child.icon"></i>
+            <span class="ui-menuitem-text">{{child.label}}</span>
+            <i class="material-icons fa fa-fw fa-angle-down layout-menuitem-toggler" *ngIf="child.items"></i>
+        </a>
+        <a (click)="itemClick($event,child,i)" *ngIf="child.routerLink"
+            [routerLink]="child.routerLink"  routerLinkActive="active-route"
+            [routerLinkActiveOptions]="{exact: true}" [attr.target]="child.target">
+            <i class="layout-menuitem-icon fas" [ngClass]="child.icon" *ngIf="child.icon"></i>
+            <span class="ui-menuitem-text">{{child.label}}</span>
+            <i class="fa fa-fw fa-angle-down layout-menuitem-toggler" *ngIf="child.items"></i>
+        </a>
+
+
+        <ul app-submenu [item]="child" *ngIf="child.items" [@children]="isActive(i) ? 'visible' : 'hidden'"></ul>
+    </li>
+</ng-template>

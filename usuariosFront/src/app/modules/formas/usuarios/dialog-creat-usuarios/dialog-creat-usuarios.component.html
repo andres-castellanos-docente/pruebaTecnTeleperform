@@ -1,0 +1,51 @@
+<div mat-dialog-title class="flex-container fontEst">
+  <label class="titlematd">Usuarios</label>
+  <button class="titlebar-icon" (click)="Close(false)">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<form  [formGroup]="usuarioForm" autocomplete="off" >
+  <div mat-dialog-content>
+    <div class="flexcontent">
+      <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.pnombre.errors && usuarioSubmited }">
+        <mat-label>Primer Nombre</mat-label>
+        <input formControlName="pnombre" maxlength="80" type="text"  class="inputtext" matInput >
+      </mat-form-field>
+      <mat-form-field class="margright20" appearance="fill">
+        <mat-label>Segundo Nombre</mat-label>
+        <input formControlName="snombre" maxlength="80" type="text"  class="inputtext" matInput>
+      </mat-form-field>
+      <mat-form-field class="margright20" appearance="fill" [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.papellid.errors && usuarioSubmited }">
+        <mat-label>Primer Apellido</mat-label>
+        <input formControlName="papellid" maxlength="80" type="text"  class="inputtext" matInput>
+      </mat-form-field>
+      <mat-form-field class="margright20" appearance="fill">
+        <mat-label>Segundo Apellido</mat-label>
+        <input formControlName="sapellid" maxlength="80" type="text"  class="inputtext" matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="matfielddate margright20"  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.fechaingreso.errors && usuarioSubmited }">
+        <mat-label>Fecha Ingreso</mat-label>
+        <input formControlName="fechaingreso" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+
+      <mat-form-field class="margright20" appearance="fill"  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.salario.errors && usuarioSubmited }">
+        <mat-label>Salario</mat-label>
+        <input formControlName="salario" type="number"  min="1" matInput>
+      </mat-form-field>
+      <mat-form-field class="margright20" appearance="fill"  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.cargo.errors && usuarioSubmited }">
+        <mat-label>Cargo</mat-label>
+        <input formControlName="cargo" type="text" class="inputtext" matInput>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+<div class="dcenter" mat-dialog-actions>
+  <button class="boton" (click)="onSubmitCrear()"> Guardar
+    <i class="fa fa-save"></i>
+  </button>
+  <button class="boton margleft20" (click)="Close(false)">Cancelar<i class="fa fa-ban"></i></button>
+</div>

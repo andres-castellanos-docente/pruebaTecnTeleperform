@@ -1,0 +1,12 @@
+<div mat-dialog-title class="flex-container fontEst">
+  <label class="titlematd">Información</label>
+  <button class="titlebar-icon" (click)="Close()">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+<div class="dcenter" mat-dialog-content>
+  <div class="textcenter">{{message}}</div>
+</div>
+<div  class="dcenter" mat-dialog-actions>
+  <button class="boton" (click)="Close()">Cerrar <i class="fa fa-check-circle"></i></button>
+</div>

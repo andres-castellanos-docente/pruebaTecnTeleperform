@@ -1,0 +1,21 @@
+<div id="princ" class="layout-wrapper "
+     [ngClass]="{'layout-static': !menuHorizontal, 'layout-horizontal' : menuHorizontal,
+     'layout-static-inactive': !sidebarActive && !menuHorizontal && isDesktop(),
+      'layout-mobile-active': sidebarActive && !menuHorizontal && !isDesktop()}">
+  <div>
+    <app-topbar></app-topbar>
+    <div class="layout-menu-container">
+      <app-menu>
+      </app-menu>
+    </div>
+    <div class="layout-content">
+      <app-breadcrumb></app-breadcrumb>
+      <div class="layout-content-container">
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
+    </div>
+    <div id="divmask" [ngClass]="{'disblock': sidebarActive}" class="layout-mask" (click)="onMaskClick($event)"></div>
+
+  </div>
+</div>

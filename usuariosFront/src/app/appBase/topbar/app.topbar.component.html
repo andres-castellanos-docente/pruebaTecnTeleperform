@@ -1,0 +1,12 @@
+<div class="topbar clearfix" [@derAIzAnimation]>
+  <button class="link" id="menu-button" (click)="app.onMenuButtonClick($event)">
+    <i class="fa fa-align-center"></i>
+  </button>
+  <div class="displayblock textcenter widtitle">
+    Encabezado
+  </div>
+
+  <span class="topbar-themeswitcher">
+    <mat-slide-toggle [checked]="darken" (change)="onChange($event.checked)"></mat-slide-toggle>
+  </span>
+</div>

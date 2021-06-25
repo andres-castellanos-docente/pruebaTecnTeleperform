@@ -1,0 +1,35 @@
+<div class="marginauto">
+  <div class="mat-table-scroll padtop" [@subirAnimation]>
+    <table class="centerdiv" style="width:500px" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="userId">
+        <th style="width:100px" mat-header-cell *matHeaderCellDef>userId</th>
+        <td style="width:100px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.userId}} </td>
+      </ng-container>
+      <ng-container matColumnDef="id">
+        <th style="width:100px" mat-header-cell *matHeaderCellDef>Id</th>
+        <td style="width:100px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th style="width:260px" mat-header-cell *matHeaderCellDef>Title</th>
+        <td style="width:260px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.title}} </td>
+      </ng-container>
+      <ng-container matColumnDef="completed">
+        <th style="width:150px" mat-header-cell *matHeaderCellDef> Completed</th>
+        <td style="width:150px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.completed}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div *ngIf="dataSource && dataSource.data.length === 0" class="centerdiv marginauto">No se encontraron registros</div>
+
+    <mat-paginator style="width:500px" class="matselect centerdiv" [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons></mat-paginator>
+  </div>
+</div>

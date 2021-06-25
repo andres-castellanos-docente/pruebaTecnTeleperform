@@ -1,0 +1,63 @@
+﻿<div class="login-body">
+  <div class="body-container">
+    <div class="p-grid">
+      <div class="p-col-12 p-lg-6 left-side padtop20" [@derAIzAnimation]>
+        <div class="divtop"></div>
+        <h1>Bienvenido</h1>
+        <p> Prueba Andres Castellanos</p>
+      </div>
+      <div class="p-col-12 p-lg-6 right-side">
+        <div class="login-wrapper">
+          <div class="login-container">
+            <div class="p-grid p-fluid" [@subirAnimation]>
+              <form [formGroup]="loginForm" autocomplete="off">
+                <div class="padbottom">
+                <span class="topbar-themeswitche">
+                  <mat-slide-toggle [checked]="darken" (change)="onChange($event.checked)"></mat-slide-toggle>
+                </span>
+                </div>
+                <div class="p-col-12 login-header"><h1>LOGIN</h1>
+                  <h2>Proyecto Prueba Teleperformance</h2></div>
+                <div [@messagesAnimation] *ngIf="viewMessages"
+                     class="ui-messages ui-widget ui-corner-all ui-messages-error"
+                     style="transform: translateY(0px); opacity: 1;">
+
+        <span class="ui-messages-close" (click)="cerrarMensaje()" tabindex="0" style="">
+          <span class="fas fa fa-window-close"></span></span>
+                  <span class="ui-messages-icon pi pi-exclamation-triangle"></span>
+                  <ul>
+                    <li>
+              <span class="ui-messages-summary">
+                {{tituloerr}}
+              </span>
+                    </li>
+                    {{messageerr}}
+                  </ul>
+                </div>
+                <div class="p-col-20 divcenter margintop20">
+                  <mat-form-field appearance="fill"
+                                  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  loginForm.controls.username.errors && loginSubmited }">
+                    <mat-label>Usuario</mat-label>
+                    <input formControlName="username" maxlength="255" type="text" class="inputtext" matInput>
+                  </mat-form-field>
+                </div>
+                <div class="p-col-20 divcenter">
+                  <mat-form-field appearance="fill"
+                                  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  loginForm.controls.password.errors && loginSubmited }">
+                    <mat-label>Contraseña</mat-label>
+                    <input formControlName="password" maxlength="255" type="password" class="inputtext" matInput>
+                  </mat-form-field>
+                </div>
+
+                <div class="p-col-20 divcenter margintop20">
+                  <button class="boton" (click)="onSubmitIniciar()">Iniciar Sesion
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

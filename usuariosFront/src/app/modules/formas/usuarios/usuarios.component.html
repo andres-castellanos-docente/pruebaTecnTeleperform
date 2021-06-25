@@ -1,0 +1,64 @@
+<div class="marginauto">
+  <div class="mat-table-scroll padtop" [@subirAnimation]>
+    <button class="boton" (click)="createDialog()">Crear <i class="fa fa-plus-square"></i></button>
+    <table class="centerdiv" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="editar">
+        <th style="max-width:60px" mat-header-cell *matHeaderCellDef> Editar</th>
+        <td style="max-width:60px" class="tcenter" mat-cell *matCellDef="let element;let i = index;">
+          <button class="botons" (click)="editar(element, i)"><i class="fa fa-edit" aria-hidden="true"></i>
+          </button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="pnombre">
+        <th style="min-width:120px" mat-header-cell *matHeaderCellDef>Primer Nombre</th>
+        <td style="min-width:120px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.pnombre}} </td>
+      </ng-container>
+      <ng-container matColumnDef="snombre">
+        <th style="min-width:120px" mat-header-cell *matHeaderCellDef>Segundo Nombre</th>
+        <td style="min-width:120px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.snombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="papellid">
+        <th style="min-width:120px" mat-header-cell *matHeaderCellDef>Primer Apellido</th>
+        <td style="min-width:120px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.papellid}} </td>
+      </ng-container>
+      <ng-container matColumnDef="sapellid">
+        <th style="min-width:150px" mat-header-cell *matHeaderCellDef> Segundo Apellido</th>
+        <td style="min-width:150px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.sapellid}} </td>
+      </ng-container>
+      <ng-container matColumnDef="fechaingreso">
+        <th style="min-width:150px" mat-header-cell *matHeaderCellDef> Fecha Ingreso</th>
+        <td style="min-width:150px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.fechaingreso | date }} </td>
+      </ng-container>
+      <ng-container matColumnDef="salario">
+        <th style="width:150px" mat-header-cell *matHeaderCellDef> Salario</th>
+        <td style="width:150px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.salario | number}} </td>
+      </ng-container>
+      <ng-container matColumnDef="cargo">
+        <th style="width:150px" mat-header-cell *matHeaderCellDef> Cargo</th>
+        <td style="width:150px" class="tcenter" mat-cell
+            *matCellDef="let element"> {{element.cargo}} </td>
+      </ng-container>
+      <ng-container matColumnDef="eliminar">
+        <th style="max-width:60px" mat-header-cell *matHeaderCellDef> Eliminar</th>
+        <td style="max-width:60px" class="tcenter" mat-cell *matCellDef="let element;let i = index;">
+          <button class="botons" (click)="eliminar(element, i)"><i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <div *ngIf="dataSource && dataSource.data.length === 0" class="marginauto centerdiv">No se encontraron registros
+    </div>
+
+    <mat-paginator class="matselect centerdiv" style="width:500px" [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons></mat-paginator>
+  </div>
+</div>
