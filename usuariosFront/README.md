@@ -7,10 +7,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Descargar dependencias con npm install
 
 * NOTA IMPORTANTE!!!!
-  * No se alcanzó a terminar el login por base de datos. Los usuarios 
-  quedaron quemados para poder loguearse!
-  
-                   user  pass  
+  * Se debe crear el usuario admin, debe de estar activo!
+    INSERT INTO public.usuarios(
+    pnombre, snombre, papellid, sapellid, fechaingreso, salario, activo, "createdAt", "updatedAt", cargo, esadmin, username, usuarios.password)
+    VALUES ( 'admin', null, 'admin', null, '2010-06-22', '0', true, current_timestamp, current_timestamp, null,true,'admin', 'YWRtaW4=');
   
   * User admin->    admin admin
   * User normal->   user  user

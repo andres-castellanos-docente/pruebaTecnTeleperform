@@ -6,7 +6,7 @@ const Usuario = db.usuarios;
 exports.findAll = (req, res) => {
     Usuario.findAll({
         where: {
-            activo: true
+            activo: true, esadmin: false
         }, order: [
             ['id', 'ASC']
         ]

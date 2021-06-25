@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit {
     this.loginService.iniciarSesion(loginModelEnv).subscribe((res: Response) => {
       const response: LoginResponse = res as any;
       this.cargServ.detenCargando();
+      debugger;
       if (response.token) {
         if (response.token.trim().length > 0) {
           localStorage.setItem('token', response.token);

@@ -27,7 +27,7 @@ module.exports = (sequelize, Sequelize) => {
       field: 'sapellid'
     },
     cargo: {
-      type:  Sequelize.STRING(2000),
+      type:  Sequelize.STRING(200),
       allowNull: true,
       field: 'cargo'
     },
@@ -46,6 +46,21 @@ module.exports = (sequelize, Sequelize) => {
       field: 'activo',
       defaultValue: true,
     },
+    esadmin: {
+      type: Sequelize.BOOLEAN,
+      field: 'esadmin',
+      defaultValue: false,
+    },
+    username: {
+      type:  Sequelize.STRING(200),
+      allowNull: true,
+      field: 'username'
+    },
+    password: {
+      type:  Sequelize.STRING(200),
+      allowNull: true,
+      field: 'password'
+    }
   });
 
   return usuarios;
