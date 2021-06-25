@@ -12,6 +12,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     pnombre, snombre, papellid, sapellid, fechaingreso, salario, activo, "createdAt", "updatedAt", cargo, esadmin, username, usuarios.password)
     VALUES ( 'admin', null, 'admin', null, '2010-06-22', '0', true, current_timestamp, current_timestamp, null,true,'admin', 'YWRtaW4=');
   
+
+  La clave queda encryptada en base64
+
   * User admin->    admin admin
   * User normal->   user  user
   
