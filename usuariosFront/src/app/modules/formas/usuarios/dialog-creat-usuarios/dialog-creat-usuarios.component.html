@@ -40,6 +40,17 @@
         <mat-label>Cargo</mat-label>
         <input formControlName="cargo" type="text" class="inputtext" matInput>
       </mat-form-field>
+
+      <mat-form-field class="margright20" appearance="fill"  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.cargo.errors && usuarioSubmited }">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" type="text" class="inputtext" matInput>
+      </mat-form-field>
+
+      <mat-form-field class="margright20" appearance="fill"  [ngClass]="{ 'ng-invalid mat-form-field-invalid':  usuarioForm.controls.cargo.errors && usuarioSubmited }">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" type="password" class="inputtext" matInput>
+      </mat-form-field>
+
     </div>
   </div>
 </form>

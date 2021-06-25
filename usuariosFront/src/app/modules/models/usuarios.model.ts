@@ -8,6 +8,8 @@ export class UsuariosModel {
   salario: number;
   cargo: string;
   activo: boolean;
+  username: string;
+  password: string;
 
   constructor(json: any = null, ed: boolean) {
     if (json !== null) {
@@ -26,6 +28,8 @@ export class UsuariosModel {
       this.salario = json.salario;
       this.cargo = json.cargo;
       this.activo = json.activo;
+      this.username = json.username;
+      this.password = json.password;
     } else {
       this.id = null;
       this.pnombre = null;
@@ -37,6 +41,8 @@ export class UsuariosModel {
       this.salario = null;
       this.cargo = null;
       this.activo = null;
+      this.username = null;
+      this.password = null;
     }
   }
 }

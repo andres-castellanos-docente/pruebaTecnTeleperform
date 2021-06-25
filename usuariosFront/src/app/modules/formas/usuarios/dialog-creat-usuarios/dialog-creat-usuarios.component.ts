@@ -40,8 +40,18 @@ export class DialogCreatUsuariosComponent implements OnInit {
       sapellid: [this.selectedUsuario.sapellid, [Validators.maxLength(80)]],
       cargo: [this.selectedUsuario.cargo, [Validators.required, Validators.maxLength(200)]],
       fechaingreso: [this.selectedUsuario.fechaingreso, [Validators.required]],
-      salario: [this.selectedUsuario.salario, [Validators.required]]
+      salario: [this.selectedUsuario.salario, [Validators.required]],
+      username: [this.selectedUsuario.username, [Validators.maxLength(200)]],
+      password: [this.selectedUsuario.password, [Validators.maxLength(200)]],
     });
+  }
+
+   isBase64(str):boolean {
+    try {
+      return btoa(atob(str)) == str;
+    } catch (err) {
+      return false;
+    }
   }
 
   onSubmitCrear(): void {
@@ -49,6 +59,11 @@ export class DialogCreatUsuariosComponent implements OnInit {
     if (this.usuarioForm.invalid) {
       return;
     }
+    if (this.isBase64(this.usuarioForm.controls.password.value) === false) {
+      var passenc =btoa(this.usuarioForm.controls.password.value);
+      this.usuarioForm.controls.password.setValue(passenc);
+    }
+
     const usuarioModelEnv = new UsuariosModel(this.usuarioForm.value, true);
     this.cargServ.iniciarCargando();
     if (this.data.dataed === null) {
